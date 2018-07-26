@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url(./assets/fonts/AvenirLTStd-Book.otf) format('otf');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url(./assets/fonts/Quicksand-Regular.otf);
+}

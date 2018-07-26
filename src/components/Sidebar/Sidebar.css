@@ -1,0 +1,57 @@
+.sidebar {
+  background: rgb(239, 239, 239);
+  background: linear-gradient(135deg, rgb(34, 35, 38), rgb(24, 24, 24));
+  display: inline-block;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 250px;
+}
+
+.sidebar-section + .sidebar-section {
+  margin-top: 2px;
+}
+
+.sidebar-header {
+  background: rgb(243, 154, 53);  
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Quicksand";
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 7px 30px;
+  position: relative;
+  margin: 0;
+  text-transform: uppercase;
+
+  transition: background .2s ease-in;
+}
+
+.sidebar .arrow {
+  bottom: 0;
+  display: block;
+  height: 30px;
+  position: absolute;
+  right: 25px;
+  width: 30px;
+
+}
+
+.sidebar-header:hover {
+  background: rgb(245, 176, 92)
+}
+
+
+
+.arrow {
+  background: url(../../assets/icons/whiteArrowNoCircle.svg) center center no-repeat;
+  background-size: 100% 100%;
+}
+
+.arrow.down {
+  transform: rotateZ(-90deg)
+}
+
+.arrow.up {
+  transform: rotateZ(90deg)
+}

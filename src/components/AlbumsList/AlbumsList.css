@@ -1,0 +1,10 @@
+.albums {
+  background: linear-gradient(135deg, rgb(34, 35, 38), rgb(24, 24, 24));
+  background: rgb(239, 239, 239);
+  box-sizing: border-box;
+  display: inline-block;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 30px;
+  width: calc(100% - 250px);
+}

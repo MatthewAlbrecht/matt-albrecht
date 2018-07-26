@@ -1,0 +1,125 @@
+.album {
+  background: #fff;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  height: 80px;
+  width: 100%;
+
+  transition: box-shadow 0.2s ease-in;
+}
+
+.album:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.album + .album {
+  margin-top: 15px;
+}
+
+.album-img {
+  /* background: #eee; */
+  background-image: url("../../assets/images/roo.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 68px;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 80px;
+  padding: 6px;
+  width: 80px;
+}
+
+.album-divider {
+  background: rgb(243, 154, 53);
+  box-sizing: border-box;
+  border: #fff 6px solid;
+  height: 80px;
+  width: 18px;
+}
+
+.album-details {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 80px;
+  justify-content: flex-start;
+  padding: 6px;
+  flex: 1;
+}
+
+.details {
+  margin-right: auto;
+}
+
+.album-title {
+  margin: 0;
+  font-family: "Avenir";
+}
+
+.artist-name {
+  margin: 0;
+  font-family: "Avenir";
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.album-year {
+  font-family: "Avenir";
+  text-orientation: sideways;
+  font-size: 16px;
+  letter-spacing: 6px;
+  writing-mode: vertical-rl;
+  text-transform: uppercase;
+  transform: rotateZ(180deg);
+}
+
+.album-rating {
+  align-items: center;
+  box-sizing: border-box;
+  border: 6px solid rgb(0, 0, 0);
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  /* padding: 6px; */
+  overflow: hidden;
+  position: relative;
+  width: 80px;
+  z-index: 2;
+}
+
+.rating-wrap {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.rating-box {
+  background: rgb(243, 154, 53);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(0.0);
+  opacity: 0.3;
+  transition: transform 2s ease-in-out, opacity 0.3s ease-in-out, background .35s ease-in-out;
+}
+
+.album-rating:hover .rating-box{
+  transition: transform .3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: none !important;
+}
+
+.rating {
+  font-family: "Quicksand";
+  font-size: 36px;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(-30%);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}

@@ -1,0 +1,83 @@
+.album-add-edit {
+  align-items: center;
+  background: linear-gradient(135deg, rgb(34, 35, 38), rgb(24, 24, 24)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+  display: flex;
+  justify-content: center;
+  /* margin: 0 auto; */
+  min-height: 100vh;
+  padding: 36px;
+  box-sizing: border-box;
+  transition: all .2s ease-in-out;
+  /* width: 80%; */
+}
+
+.album-id-form {
+  width: 300px;
+}
+
+.primary-button {
+  background: linear-gradient(-135deg, rgb(243, 154, 53), rgb(245, 176, 92)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: "Avenir";
+  font-size: 12px;
+  letter-spacing: 4px;
+  margin: 0 auto;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+}
+
+.fullscreen-input {
+  background: rgb(255,255,255,0.1);
+  border: none;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Avenir";
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.fullscreen-input:focus {
+  outline: none;
+}
+
+.fullscreen-input:focus::placeholder {
+  color: transparent;
+}
+
+.fullscreen-input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sticky-button {
+  background: rgb(243, 154, 53) url('../../assets/icons/whiteArrowNoCircle.svg') no-repeat center center;
+  background-size: 100% 100%;
+  box-shadow: 0 6px 13px 0 rgba(0,0,0,0.33);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 36px;
+  position: absolute;
+  width: 36px;
+}
+
+.sticky-button:hover {
+  box-shadow: none;
+}
+
+.sticky-button.top-left {
+  top: 24px;
+  left: 24px;
+}

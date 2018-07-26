@@ -1,0 +1,38 @@
+
+.album-form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.input-wrap {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 12px;
+  width: 50%;
+}
+
+.input-label {
+  color: #fff;
+  display: block;
+  font-family: "Quicksand";
+  font-size: 10px;
+  margin-bottom: 6px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.album-input {
+  background: rgb(255,255,255,0.1);
+  border: none;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Avenir";
+  font-size: 14px;
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  /* text-align: center; */
+  width: 100%;
+}

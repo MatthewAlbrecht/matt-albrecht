@@ -1,0 +1,270 @@
+.planet {
+  background: linear-gradient(134.72deg, #000000 0%, #49626f 100%);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  /* animation: App-logo-spin infinite 20s linear; */
+}
+
+.planet.big {
+  height: 65vh;
+  width: 65vh;
+  top: -41vh;
+  right: -32vh;
+  z-index: 3;
+}
+
+.planet.small {
+  height: 15vh;
+  width: 15vh;
+  top: 10vh;
+  right: 10vh;
+  z-index: 5;
+}
+
+.planet.medium {
+  height: 50vh;
+  width: 50vh;
+  bottom: -29vh;
+  left: -29vh;
+  z-index: 4;
+}
+
+.app-header {
+  align-items: flex-start;
+  background-color: #16242b;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 25vh 6vw;
+  position: relative;
+}
+
+.name,
+.title {
+  color: #fff;
+  display: inline-block;
+  font-family: "Avenir";
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 34px;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  z-index: 7;
+}
+
+.title {
+  margin-top: 31px;
+}
+
+.app-header h1 span {
+  background-color: #e2703a;
+  display: block;
+  height: 15px;
+  position: absolute;
+  width: 100%;
+  bottom: -3px;
+  z-index: -1;
+}
+
+.blurb {
+  color: #fff;
+  font-family: "Avenir";
+  font-size: 18px;
+  font-weight: 400;
+  margin: 31px 0 0 0;
+  letter-spacing: 1.2px;
+  line-height: 26px;
+  position: relative;
+  text-align: left;
+  width: 65%;
+  z-index: 6;
+}
+
+.landing-ctas {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: auto;
+  position: relative;
+  z-index: 6;
+}
+
+.cta-chops,
+.cta-contact {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  font-family: "Quicksand";
+  font-weight: bold;
+  letter-spacing: 4px;
+  line-height: 18px;
+  margin: 0;
+  /* padding: 0 26px 0 0; */
+  position: relative;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.cta-contact {
+  margin: 0 0 26px 0;
+}
+ 
+.arrow-circle.down {
+  transform: rotate(90deg);
+}
+
+.arrow-circle {
+  background: url('../../assets/icons/whiteArrow.svg') no-repeat center center;
+  background-size: 100% 100%;
+  border-radius: 50%;
+  border: 1px #fff solid;
+  display: inline-block;
+  box-sizing: border-box;
+  height: 18px;
+  position: relative;
+  /* margin: 0 0 0 8px; */
+  position: absolute;
+  width: 18px;
+  text-align: center;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 560px) {
+  .name, .title {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 50px;
+  }
+
+  .app-header h1 span {
+    height: 21px;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .planet {
+    background: linear-gradient(134.72deg, #000000 0%, #49626f 100%);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    /* animation: App-logo-spin infinite 20s linear; */
+  }
+  
+  .planet.big {
+    height: 90vh;
+    width: 90vh;
+    top: -10vh;
+    right: -50vh;
+    z-index: 3;
+  }
+  
+  .planet.small {
+    height: 25vh;
+    width: 25vh;
+    top: 50vh;
+    right: 15vh;
+    z-index: 5;
+  }
+  
+  .planet.medium {
+    height: 60vh;
+    width: 60vh;
+    bottom: -15vh;
+    left: -12.5vh;
+    z-index: 4;
+  }
+  
+  .app-header {
+    align-items: flex-start;
+    background-color: #16242b;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    padding: 15vh 10vw;
+    position: relative;
+  }
+  
+  .name,
+  .title {
+    color: #fff;
+    display: inline-block;
+    font-family: "Avenir";
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 60px;
+    margin: 0;
+    position: relative;
+    z-index: 7;
+  }
+  
+  .title {
+    margin-top: 31px;
+  }
+  
+  .app-header h1 span {
+    height: 25px;
+  }
+  
+  .blurb {
+    color: #fff;
+    font-family: "Avenir";
+    font-size: 25px;
+    font-weight: 500;
+    margin: 31px 0 0 0;
+    letter-spacing: 1.2px;
+    line-height: 34px;
+    position: relative;
+    width: auto;
+    z-index: 6;
+  }
+  
+  .landing-ctas {
+    display: block;
+    margin-top: auto;
+    position: relative;
+    z-index: 6;
+  }
+  
+  .cta-chops,
+  .cta-contact {
+    color: #fff;
+    cursor: pointer;
+    display: inline;
+    font-size: 14px;
+    font-family: "Quicksand";
+    font-weight: bold;
+    letter-spacing: 4px;
+    line-height: 18px;
+  }
+  
+  .cta-contact {
+    margin-left: 115px;
+  }
+
+  .arrow-circle {
+    border-radius: 50%;
+    border: 1px #fff solid;
+    display: inline-block;
+    height: 18px;
+    position: relative;
+    margin: 0 0 0 8px;
+    width: 18px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  .name, .title {
+    font-size: 85px;
+    font-weight: 900;
+    line-height: 85px;
+  }
+}
