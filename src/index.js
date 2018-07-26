@@ -7,8 +7,6 @@ import AlbumAddEdit from './components/AlbumAddEdit'
 import Albums from './components/Albums'
 import registerServiceWorker from "./registerServiceWorker";
 
-require('dotenv').config()
-
 
 
 ReactDOM.render(
