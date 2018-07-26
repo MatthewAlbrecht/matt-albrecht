@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { toast } from 'react-toastify';
+import { withRouter } from 'react-router';
 import queryString from 'query-string'
+import { qsStringify } from '../../utils/utils'
 
 import Album from '../Album'
 
@@ -25,7 +27,7 @@ class AlbumsList extends Component {
       limit: 25,
       sort: "-orderNumber"
     }
-    fetch(process.env.REACT_APP_API_URL + "albums?" + queryString.stringify(qs), {
+    fetch(process.env.REACT_APP_API_URL + "albums?" + qsStringify(qs), {
       method: "get"
     })
       .then(res => res.json())
@@ -54,4 +56,4 @@ class AlbumsList extends Component {
   }
 }
 
-export default AlbumsList;
+export default withRouter(AlbumsList);

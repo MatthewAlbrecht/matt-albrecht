@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import queryString from 'query-string'
+import { withRouter } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
-import { getDurationStringFromTotalSeconds } from '../../utils/utils'
+import { getDurationStringFromTotalSeconds, parse } from '../../utils/utils'
 import 'react-toastify/dist/ReactToastify.css';
 
 import "./AlbumAddEdit.css";
@@ -24,7 +24,7 @@ class AlbumAddEdit extends Component {
   }
   
   componentDidMount() {
-    let { access_token } = queryString.parse(window.location.search)
+    let { access_token } = parse(this.props.location.search.slice(1))
     if (access_token) {
       localStorage.setItem('access_token', access_token)
     } else if (localStorage.getItem('access_token')) {
@@ -176,7 +176,7 @@ class AlbumAddEdit extends Component {
   }
 }
 
-export default AlbumAddEdit;
+export default withRouter(AlbumAddEdit);
 
 // eslint-disable-next-line
 Date.prototype.toDateInputValue = (function() { 
