@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { toast } from 'react-toastify';
 import { withRouter } from 'react-router';
-import queryString from 'query-string'
 import { qsStringify } from '../../utils/utils'
 
 import Album from '../Album'
