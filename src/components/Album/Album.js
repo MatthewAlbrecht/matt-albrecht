@@ -97,7 +97,7 @@ class Album extends Component {
       <div className="album-rating">
         <div className="rating-box" style={this.state.ratingBoxStyle}></div>
         <div className="rating-wrap">
-          <h3 className="rating" style={this.state.ratingStyle}>{data.rating.toFixed(1)}</h3>
+          <h3 className="rating" style={this.state.ratingStyle}>{data.rating === 10 ? 10 : data.rating.toFixed(1)}</h3>
         </div>
       </div>
     </div>;

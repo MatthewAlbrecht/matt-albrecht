@@ -10,5 +10,6 @@ export default {
   primarySort: "orderNumber",
   secondarySortOrder: "asc",
   secondarySort: "",
-  albumsLoading: false
+  albumsLoading: false,
+  search: ""
 }

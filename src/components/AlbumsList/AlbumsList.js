@@ -10,7 +10,10 @@ class AlbumsList extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.state.sort !== prevProps.state.sort) {
+    if (
+      this.props.state.sort !== prevProps.state.sort ||
+      this.props.state.search !== prevProps.state.search
+    ) {
       this.props.actions.getAlbums()      
     }
   }

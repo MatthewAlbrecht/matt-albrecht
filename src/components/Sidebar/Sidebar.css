@@ -11,6 +11,10 @@
   margin-top: 2px;
 }
 
+.sidebar-section.search {
+  padding: 15px;
+}
+
 .sidebar-header {
   background: rgb(243, 154, 53);  
   color: white;
@@ -54,4 +58,14 @@
 
 .arrow.up {
   transform: rotateZ(90deg)
+}
+
+.sidebar-content.hide {
+  max-height: 0px;
+}
+
+.sidebar-content {
+  overflow: hidden;
+  transition: max-height .4s ease-in-out;
+  max-height: 300px;
 }

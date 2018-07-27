@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
-import "./Sidebar.css";
 import Filters from "../Filters";
 import Stats from "../Stats";
 import Sort from "../Sort";
+import Search from "../Search";
 
+import "./Sidebar.css";
 class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -21,26 +22,32 @@ class Sidebar extends Component {
   }
   
   cnArrow = (target) => this.state[target + "Hidden"] ? "arrow down" : "arrow up"
+  cnSidebarContent = (target) => this.state[target + "Hidden"] ? "sidebar-content hide" : "sidebar-content"
 
   render() {
     return (
       <div className="sidebar">
+        <div className="sidebar-section search">
+          <div className="sidebar-content">
+            <Search Consumer={this.props.Consumer}></Search>
+          </div>
+        </div>
         <div className="sidebar-section">
           <h3 className="sidebar-header" onClick={() => this.handleHeaderClick("sort")}>Sort <span className={this.cnArrow("sort")}></span></h3>
-          <div className="sidebar-content">
-            <Sort hide={this.state.sortHidden} Consumer={this.props.Consumer}></Sort>
+          <div className={this.cnSidebarContent("sort")}>
+            <Sort Consumer={this.props.Consumer}></Sort>
           </div>
         </div>
         <div className="sidebar-section">
           <h3 className="sidebar-header" onClick={() => this.handleHeaderClick("filter")}>Filter <span className={this.cnArrow("filter")}></span></h3>
-          <div className="sidebar-content">
-            <Filters hide={this.state.filterHidden}></Filters>
+          <div className={this.cnSidebarContent("filter")}>
+            <Filters></Filters>
           </div>
         </div>
         <div className="sidebar-section">
           <h3 className="sidebar-header" onClick={() => this.handleHeaderClick("stats")}>Stats <span className={this.cnArrow("stats")}></span></h3>
-          <div className="sidebar-content">
-            <Stats hide={this.state.statsHidden}></Stats>
+          <div className={this.cnSidebarContent("stats")}>
+            <Stats></Stats>
           </div>
         </div>
       </div>

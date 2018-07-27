@@ -1,0 +1,14 @@
+.search-input {
+  background: rgb(255,255,255,0.1) url('../../assets/icons/search.svg') 15px center no-repeat;
+  border: none;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Avenir";
+  font-size: 14px;
+  padding: 8px 12px 8px 38px;
+  /* text-align: center; */
+  width: 100%;
+}
