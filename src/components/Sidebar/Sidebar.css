@@ -4,7 +4,7 @@
   display: inline-block;
   overflow-y: scroll;
   height: 100vh;
-  width: 250px;
+  width: 300px;
 }
 
 .sidebar-section + .sidebar-section {

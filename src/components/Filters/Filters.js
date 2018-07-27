@@ -6,7 +6,9 @@ class Filters extends Component {
     if (this.props.hide) {
       return null
     }
-    return <div>Filters</div>;
+    return <div className="filters">
+      
+    </div>;
   }
 }
 

@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { toast } from 'react-toastify';
-import { withRouter } from 'react-router';
-import { qsStringify } from '../../utils/utils'
 
 import Album from '../Album'
 
@@ -9,40 +6,23 @@ import './AlbumsList.css'
 class AlbumsList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      albums: []
-    }
-    this.getAlbums = this.getAlbums.bind(this);
     this.renderAlbums = this.renderAlbums.bind(this);
   }
 
-  componentDidMount() {
-    this.getAlbums()
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.state.sort !== prevProps.state.sort) {
+      this.props.actions.getAlbums()      
+    }
   }
   
-  getAlbums() {
-    let qs = {
-      page: 1,
-      limit: 25,
-      sort: "-orderNumber"
-    }
-    fetch(process.env.REACT_APP_API_URL + "albums?" + qsStringify(qs), {
-      method: "get"
-    })
-      .then(res => res.json())
-      .then(json => {
-        console.log('\n---> json <---\n', json, '\n');
-        if (json.error) {
-          toast("Error Fetching Albums", { type: "error", autoClose: 3000 })
-          return
-        }
-        this.setState({albums: json.docs || []})
-      })
+
+  componentDidMount() {
+    this.props.actions.getAlbums()
   }
 
   renderAlbums() {
-    if (this.state.albums) {
-      return this.state.albums.map((album, i) => <Album key={i} data={album}></Album>)
+    if (this.props.state.albums && !this.props.state.albumsLoading) {
+      return this.props.state.albums.map((album, i) => <Album key={i} data={album} index={i}></Album>)
     } else {
       return null
     }
@@ -52,7 +32,8 @@ class AlbumsList extends Component {
     return <div className="albums">
       {this.renderAlbums()}
     </div>;
+
   }
 }
 
-export default withRouter(AlbumsList);
+export default AlbumsList;

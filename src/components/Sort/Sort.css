@@ -1,0 +1,11 @@
+.sort {
+  padding: 30px;
+}
+
+.sort-item + .sort-item {
+  margin-top: 15px;
+}
+
+.sort-item-radio {
+  color: #fff;
+}

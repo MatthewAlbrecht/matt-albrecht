@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Header from '../Header'
 import Skills from '../Skills'
 
-import "./App.css";
-class App extends Component {
+import "./Home.css";
+class Home extends Component {
   
   render() {
     return (
@@ -15,4 +15,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;

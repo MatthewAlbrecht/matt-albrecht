@@ -1,0 +1,51 @@
+.label {
+  color: #fff;
+  display: block;
+  font-family: "Quicksand";
+  font-size: 10px;
+  margin-bottom: 6px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.custom-select {
+  background: #454545 url('../../assets/icons/selectMenuCaret.svg') right 20px center no-repeat;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+  cursor: pointer;
+  /* height: 30px; */
+  /* margin-top: 11px; */
+  overflow: hidden;
+  transition: background 110ms ease-in-out;
+  width: 100%;
+}
+.custom-select:hover {
+  background: #585858 url('../../assets/icons/selectMenuCaret.svg') right 20px center no-repeat;
+}
+
+.custom-select select {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Avenir';
+  font-size: 14px;
+  height: 100%;
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.custom-select.disabled {
+  background: #363636;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.custom-select.disabled select {
+  cursor: not-allowed;
+}
+
+.custom-select select:focus ~ .custom-select {
+  background: #575757;
+}

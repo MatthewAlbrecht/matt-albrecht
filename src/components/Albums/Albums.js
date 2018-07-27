@@ -8,8 +8,8 @@ class Albums extends Component {
   
   render() {
     return <div className="albums-page">
-      <Sidebar></Sidebar>
-      <AlbumsList></AlbumsList>
+      <Sidebar Consumer={this.props.Consumer}></Sidebar>
+      <AlbumsList Consumer={this.props.Consumer}></AlbumsList>
     </div>;
   }
 }

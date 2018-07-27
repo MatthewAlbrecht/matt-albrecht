@@ -5,7 +5,9 @@ class Stats extends Component {
     if (this.props.hide) {
       return null
     }
-    return <div>Stats</div>;
+    return <div className="stats">
+      
+    </div>;
   }
 }
 

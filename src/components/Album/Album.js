@@ -12,25 +12,38 @@ class Album extends Component {
     }
 
     this.styleRatingBox = this.styleRatingBox.bind(this);
-    this.myIinterval = null
+    this.myInterval = null
+    this.myTimeout1 = null
+    this.myTimeout2 = null
+    this.myTimeout3 = null
+    this.myTimeout4 = null
   }
   
   componentDidMount() {
-    setTimeout(() => {
+    let baseNumber = 400 // + (80 * this.props.index)
+    this.myTimeout1 = setTimeout(() => {
       this.styleRatingBox()
-      setTimeout(() => {
-        clearInterval(this.myIinterval)
-      }, 2000);
-    },400);
-    setTimeout(() => {
+      this.myTimeout2 = setTimeout(() => {
+        clearInterval(this.myInterval)
+      }, 2000 );
+    }, baseNumber);
+    this.myTimeout3 = setTimeout(() => {
       this.styleRatingBox()
       this.setState({showRating: true})
-    }, 2400);
-    setTimeout(() => {  
+    }, baseNumber + 2000);
+    this.myTimeout4 = setTimeout(() => {  
       this.styleRating()
-    }, 1400);
+    }, baseNumber + 1000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.myInterval)
+    clearTimeout(this.myTimeout1)
+    clearTimeout(this.myTimeout2)
+    clearTimeout(this.myTimeout3)
+    clearTimeout(this.myTimeout4)
+  }
+  
 
   styleAlbumImg() {
     if (this.props.data && this.props.data.spotifyAlbumData) {
@@ -52,7 +65,7 @@ class Album extends Component {
     let { data } = this.props
     if (!this.state.ratingBoxStyle) {
       let i = 0
-      this.myIinterval = setInterval(() => {
+      this.myInterval = setInterval(() => {
         this.setState({ratingBoxStyle: {...this.state.ratingBoxStyle, background: json[i % 20]}})
         i++
       }, 2000 / Math.floor(data.rating * 2))

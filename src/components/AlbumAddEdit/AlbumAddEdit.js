@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from 'react-router';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { getDurationStringFromTotalSeconds, parse } from '../../utils/utils'
-import 'react-toastify/dist/ReactToastify.css';
 
 import "./AlbumAddEdit.css";
 import AlbumForm from "../AlbumForm/AlbumForm";
@@ -166,9 +165,6 @@ class AlbumAddEdit extends Component {
   render() {
     return (
       <div className="album-add-edit" >
-        <ToastContainer 
-          autoClose={3000}
-        />
         {this.renderBackButton()}
         {this.renderContent()}
       </div>
