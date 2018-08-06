@@ -22,14 +22,14 @@ class Sidebar extends Component {
   }
   
   cnArrow = (target) => this.state[target + "Hidden"] ? "arrow down" : "arrow up"
-  cnSidebarContent = (target) => this.state[target + "Hidden"] ? "sidebar-content hide" : "sidebar-content"
+  cnSidebarContent = (target) => this.state[target + "Hidden"] ? "sidebar-content hide " + target : "sidebar-content " + target
 
   render() {
     return (
       <div className="sidebar">
         <div className="sidebar-section search">
           <div className="sidebar-content">
-            <Search Consumer={this.props.Consumer}></Search>
+            <Search Consumer={this.props.Consumer} target="search"></Search>
           </div>
         </div>
         <div className="sidebar-section">
@@ -41,7 +41,7 @@ class Sidebar extends Component {
         <div className="sidebar-section">
           <h3 className="sidebar-header" onClick={() => this.handleHeaderClick("filter")}>Filter <span className={this.cnArrow("filter")}></span></h3>
           <div className={this.cnSidebarContent("filter")}>
-            <Filters></Filters>
+            <Filters Consumer={this.props.Consumer}></Filters>
           </div>
         </div>
         <div className="sidebar-section">

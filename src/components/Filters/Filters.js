@@ -1,14 +1,97 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import './Filters.css'
+import "./Filters.css";
+import RangeInput from "../RangeInput";
+import GenreSelector from "../GenreSelector";
+
 class Filters extends Component {
+  formatMinutesToHoursTip = (minutes) => Math.floor(minutes / 60) + " hr " + ("0" + String(minutes - Math.floor(minutes / 60) * 60)).slice(-2) + " min" 
+  formatMinutesToHoursLabel = (minutes) => Math.floor(minutes / 60) + ":" + ("0" + String(minutes - Math.floor(minutes / 60) * 60)).slice(-2) 
+  formatSecondsToMinutes = (seconds) => Math.floor(seconds / 60) + ":" + ("0" + String(seconds - Math.floor(seconds / 60) * 60)).slice(-2) 
   render() {
     if (this.props.hide) {
-      return null
+      return null;
     }
-    return <div className="filters">
-      
-    </div>;
+    return (
+      <div className="filters">
+        <div className="filter-group">
+          <div className="filter-item">
+            <RangeInput
+              min={1960}
+              max={2018}
+              defaultValue={[1960, 2018]}
+              label="Album Year"
+              Consumer={this.props.Consumer}
+              target="AlbumYear"
+              labelFormatter={val => val}
+            ></RangeInput>
+          </div>
+        </div>
+        <div className="filter-group">
+          <div className="filter-item">
+            <RangeInput
+              min={0}
+              max={180}
+              defaultValue={[0, 180]}
+              label="Album Length"
+              Consumer={this.props.Consumer}
+              target="AlbumLengthInMinutes"
+              tipFormatter={this.formatMinutesToHoursTip}
+              labelFormatter={this.formatMinutesToHoursLabel}
+            ></RangeInput>
+          </div>
+        </div>
+        <div className="filter-group">
+          <div className="filter-item">
+            <RangeInput
+              min={1}
+              max={36}
+              defaultValue={[1, 36]}
+              label="Total Tracks"
+              Consumer={this.props.Consumer}
+              target="AlbumTotalTracks"
+              labelFormatter={val => val}
+            ></RangeInput>
+          </div>
+        </div>
+        <div className="filter-group">
+          <div className="filter-item">
+            <RangeInput
+              min={0}
+              max={480}
+              defaultValue={[0, 480]}
+              label="Shortest Track"
+              Consumer={this.props.Consumer}
+              target="ShortestTrackInSeconds"
+              tipFormatter={this.formatSecondsToMinutes}
+              labelFormatter={this.formatSecondsToMinutes}
+            ></RangeInput>
+          </div>
+        </div>
+        <div className="filter-group">
+          <div className="filter-item">
+            <RangeInput
+              min={0}
+              max={780}
+              defaultValue={[0, 780]}
+              label="Longest Track"
+              Consumer={this.props.Consumer}
+              target="LongestTrackInSeconds"
+              tipFormatter={this.formatSecondsToMinutes}
+              labelFormatter={this.formatSecondsToMinutes}
+            ></RangeInput>
+          </div>
+        </div>
+        <div className="filter-group">
+          <div className="filter-item">
+            <GenreSelector
+              Consumer={this.props.Consumer}
+            >
+            </GenreSelector>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

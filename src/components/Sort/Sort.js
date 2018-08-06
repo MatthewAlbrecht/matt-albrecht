@@ -80,7 +80,7 @@ class Sort extends Component {
     if (this.props.hide) {
       return null
     }
-    return <div className="sort">
+    return <div className="sort-wrap">
       <div className="sort-item primary">
         <div className="sort-item-dropdown">
           <SelectBox

@@ -1,0 +1,7 @@
+.filters {
+  padding: 15px 30px;
+}
+
+.filter-group + .filter-group {
+  margin-top: 15px;
+}

@@ -11,5 +11,18 @@ export default {
   secondarySortOrder: "asc",
   secondarySort: "",
   albumsLoading: false,
-  search: ""
+  search: "",
+  genre: "",
+  genres: [],
+  genresValue: [],
+  lessThanAlbumYear: "",
+  greaterThanAlbumYear: "",
+  lessThanAlbumLengthInMinutes: "",
+  greaterThanAlbumLengthInMinutes: "",
+  lessThanShortestTrackInSeconds: "",
+  greaterThanShortestTrackInSeconds: "",
+  lessThanLongestTrackInSeconds: "",
+  greaterThanLongestTrackInSeconds: "",
+  lessThanAlbumTotalTracks: "",
+  greaterThanAlbumTotalTracks: ""
 }

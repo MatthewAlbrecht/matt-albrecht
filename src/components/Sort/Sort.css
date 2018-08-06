@@ -1,9 +1,9 @@
-.sort {
-  padding: 30px;
+.sort-wrap {
+  padding: 15px 30px;
 }
 
 .sort-item + .sort-item {
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 .sort-item-radio {

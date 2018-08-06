@@ -1,0 +1,48 @@
+.genre-selector {
+  background:rgb(255,255,255,0.1);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 10px 18px;
+  width: 100%;
+}
+
+.genres {
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.genre {
+  background:rgb(255,255,255,0.1);
+  border-radius: 4px;
+  color: rgb(255,255,255,0.6);
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Quicksand";
+  font-size: 12px;
+  margin-bottom: 6px;
+  margin-right: 6px;
+  /* letter-spacing: 1.5px; */
+  padding: 4px 6px;
+  /* text-transform: uppercase; */
+  transition: background .2s ease-in-out, color .2s ease-in-out;
+}
+
+.genre:last-of-type{
+  margin-right: 0;
+}
+
+.genre.selected {
+  background:rgb(255,255,255,0.3);
+  color: #fff;
+}
+
+.genre:hover {
+  background:rgb(255,255,255,0.3);
+  color: #fff;
+}
+
+.genre-selector .input-label {
+  margin-bottom: 12px;
+}

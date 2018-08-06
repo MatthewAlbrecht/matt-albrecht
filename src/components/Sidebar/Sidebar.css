@@ -60,12 +60,20 @@
   transform: rotateZ(90deg)
 }
 
-.sidebar-content.hide {
-  max-height: 0px;
-}
 
 .sidebar-content {
   overflow: hidden;
   transition: max-height .4s ease-in-out;
+}
+
+.sidebar-section .sidebar-content.hide {
+  max-height: 0px;
+}
+
+.sidebar-content.sort {
   max-height: 300px;
+}
+
+.sidebar-content.filter {
+  max-height: 1000px;
 }
