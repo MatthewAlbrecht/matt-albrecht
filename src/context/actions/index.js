@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 export default {
   getAlbums: function(value) {
     this.setState({ albumsLoading: true, page: 1 }, () => {
-      fetch(process.env.REACT_APP_API_URL + "albums/test" + getQsFromState(this.state), {
+      fetch(process.env.REACT_APP_API_URL + "albums" + getQsFromState(this.state), {
         method: "get"
       })
         .then(res => res.json())
@@ -28,7 +28,7 @@ export default {
     let { page, pages } = this.state;
     if (page < pages) {
       this.setState({page: page + 1}, () => {
-        fetch(process.env.REACT_APP_API_URL + "albums/test" +  getQsFromState(this.state), {
+        fetch(process.env.REACT_APP_API_URL + "albums" +  getQsFromState(this.state), {
           method: "get"
         })
           .then(res => res.json())

@@ -9,24 +9,24 @@ class Stats extends Component {
     }
     return <div className="stats">
       <StatsGroup
-        data={this.props.state.stats.albumTotalTracks || {}}
+        data={(this.props.state.stats && this.props.state.stats.albumTotalTracks) || {}}
         label="Total Tracks"
         toFixedAvg={1}
       ></StatsGroup>
       <StatsGroup
-        data={this.props.state.stats.rating || {}}
+        data={(this.props.state.stats && this.props.state.stats.rating) || {}}
         label="Rating"
         toFixedAvg={1}
         toFixedMinMax={1}
         toFixedMode={1}
       ></StatsGroup>
       <StatsGroup
-        data={this.props.state.stats.albumYear || {}}
+        data={(this.props.state.stats && this.props.state.stats.albumYear) || {}}
         label="Album Year"
         toFixedAvg={0}
       ></StatsGroup>
       <StatsGroup
-        data={this.props.state.stats.albumLengthInMinutes || {}}
+        data={(this.props.state.stats && this.props.state.stats.albumLengthInMinutes) || {}}
         label="Album Length (m)"
         toFixedAvg={0}
       ></StatsGroup>

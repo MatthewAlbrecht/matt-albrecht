@@ -64,12 +64,7 @@ class Album extends Component {
   styleRatingBox() {
     let { data } = this.props
     if (!this.state.ratingBoxStyle) {
-      let i = 0
-      this.myInterval = setInterval(() => {
-        this.setState({ratingBoxStyle: {...this.state.ratingBoxStyle, background: json[i % 20]}})
-        i++
-      }, 2000 / Math.floor(data.rating * 2))
-      this.setState({ratingBoxStyle: {transform: `scale(${data.rating/10})`}}) 
+      this.setState({ratingBoxStyle: {transform: `scale(${data.rating/10})`, background: json[Math.round(((data.rating / 10) * 20) - 1)]}}) 
     } else {
       this.setState({ratingBoxStyle: {...this.state.ratingBoxStyle, opacity: "0.35"}})
     }
