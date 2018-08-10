@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 export default {
   getAlbums: function(value) {
     this.setState({ albumsLoading: true, page: 1 }, () => {
-      fetch(process.env.REACT_APP_API_URL + "albums" + getQsFromState(this.state), {
+      fetch(process.env.REACT_APP_API_URL + "albums/test" + getQsFromState(this.state), {
         method: "get"
       })
         .then(res => res.json())
@@ -18,7 +18,8 @@ export default {
             albums: json.docs || [],
             albumsLoading: false,
             total: json.total,
-            pages: json.pages
+            pages: json.pages,
+            stats: json.stats
           });
         });
     });
@@ -27,7 +28,7 @@ export default {
     let { page, pages } = this.state;
     if (page < pages) {
       this.setState({page: page + 1}, () => {
-        fetch(process.env.REACT_APP_API_URL + "albums" +  getQsFromState(this.state), {
+        fetch(process.env.REACT_APP_API_URL + "albums/test" +  getQsFromState(this.state), {
           method: "get"
         })
           .then(res => res.json())
@@ -42,8 +43,9 @@ export default {
             this.setState({
               albums: newAlbums,
               total: json.total,
-              pages: json.pages
-            });
+              pages: json.pages,
+              stats: json.stats 
+          });
           });
       })
     }
@@ -116,6 +118,7 @@ function getQsFromState(state) {
     sort,
     light,
     search,
+    startDate,
     genresValue,
     lessThanAlbumYear,
     greaterThanAlbumYear,
@@ -126,7 +129,9 @@ function getQsFromState(state) {
     lessThanLongestTrackInSeconds,
     greaterThanLongestTrackInSeconds,
     lessThanAlbumTotalTracks,
-    greaterThanAlbumTotalTracks
+    greaterThanAlbumTotalTracks,
+    lessThanListenDate,
+    greaterThanListenDate,
   } = state;
   let qs = {
     page,
@@ -144,8 +149,18 @@ function getQsFromState(state) {
     lessThanLongestTrackInSeconds,
     greaterThanLongestTrackInSeconds,
     lessThanAlbumTotalTracks,
-    greaterThanAlbumTotalTracks
+    greaterThanAlbumTotalTracks,
+    lessThanListenDate: startDate.addDays(lessThanListenDate),
+    greaterThanListenDate: startDate.addDays(greaterThanListenDate),
   };
 
   return qsStringify(qs) 
+}
+
+// eslint-disable-next-line
+Date.prototype.addDays = function(days) {
+  var date = new Date(this.valueOf());
+  date.setDate(date.getDate() + days);
+  date = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  String(date.getFullYear()).substr(2,2)
+  return date;
 }

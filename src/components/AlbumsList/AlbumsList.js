@@ -24,7 +24,9 @@ class AlbumsList extends Component {
       this.props.state.greaterThanLongestTrackInSeconds !== prevProps.state.greaterThanLongestTrackInSeconds ||
       this.props.state.lessThanAlbumTotalTracks !== prevProps.state.lessThanAlbumTotalTracks ||
       this.props.state.greaterThanAlbumTotalTracks !== prevProps.state.greaterThanAlbumTotalTracks ||
-      this.props.state.genresValue !== prevProps.state.genresValue
+      this.props.state.genresValue !== prevProps.state.genresValue ||
+      this.props.state.lessThanListenDate !== prevProps.state.lessThanListenDate ||
+      this.props.state.greaterThanListenDate !== prevProps.state.greaterThanListenDate
     ) {
       this.props.actions.getAlbums()      
     }

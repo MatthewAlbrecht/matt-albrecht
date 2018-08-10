@@ -6,11 +6,13 @@ export default {
   sort: "-orderNumber",
   light: "true",
   albums: [],
+  stats: {},
   primarySortOrder: "desc",
   primarySort: "orderNumber",
   secondarySortOrder: "asc",
   secondarySort: "",
   albumsLoading: false,
+  startDate: new Date("06/01/18"),
   search: "",
   genre: "",
   genres: [],
@@ -24,5 +26,7 @@ export default {
   lessThanLongestTrackInSeconds: "",
   greaterThanLongestTrackInSeconds: "",
   lessThanAlbumTotalTracks: "",
-  greaterThanAlbumTotalTracks: ""
+  greaterThanAlbumTotalTracks: "",
+  lessThanListenDate: "",
+  greaterThanListenDate: "",
 }

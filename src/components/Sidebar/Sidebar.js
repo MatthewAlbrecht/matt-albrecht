@@ -11,7 +11,7 @@ class Sidebar extends Component {
     super(props);
     this.state = {
       filterHidden: true,
-      statsHidden: true,
+      statHidden: true,
       sortHidden: true,
     }
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
@@ -45,9 +45,9 @@ class Sidebar extends Component {
           </div>
         </div>
         <div className="sidebar-section">
-          <h3 className="sidebar-header" onClick={() => this.handleHeaderClick("stats")}>Stats <span className={this.cnArrow("stats")}></span></h3>
-          <div className={this.cnSidebarContent("stats")}>
-            <Stats></Stats>
+          <h3 className="sidebar-header" onClick={() => this.handleHeaderClick("stat")}>Stats <span className={this.cnArrow("stat")}></span></h3>
+          <div className={this.cnSidebarContent("stat")}>
+            <Stats Consumer={this.props.Consumer}></Stats>
           </div>
         </div>
       </div>

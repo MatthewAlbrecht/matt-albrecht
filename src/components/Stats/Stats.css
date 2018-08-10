@@ -1,0 +1,45 @@
+.stats {
+  padding: 15px 30px;
+}
+
+.stats-group + .stats-group {
+  margin-top: 15px;
+}
+
+.stats-items {
+  background:rgb(255,255,255,0.1);
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+  width: 100%;
+}
+
+.stats-item {
+  background:rgb(255,255,255,0.1);
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 60px;
+  width: calc(50% - 15px);
+}
+
+.stats-item {
+  margin-bottom: 7.5px;
+  margin-top: 7.5px;
+}
+
+.stats-item > .label {
+  margin-top: 6px;
+  text-align: center;
+}
+
+.stats-value {
+  color: #fff;
+  font-family: "Avenir";
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+}
