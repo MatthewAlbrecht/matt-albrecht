@@ -1,24 +1,15 @@
 
 .album-form {
   margin: 0 auto;
-  width: 50%;
+  padding: 15px 30px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input-wrap {
   box-sizing: border-box;
   display: inline-block;
-  padding: 0 12px;
-  width: 50%;
-}
-
-.input-label {
-  color: #fff;
-  display: block;
-  font-family: "Quicksand";
-  font-size: 10px;
-  margin-bottom: 6px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  width: 100%;
 }
 
 .album-input {

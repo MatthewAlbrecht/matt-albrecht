@@ -1,0 +1,23 @@
+.login-page {
+  background: rgb(239, 239, 239); 
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login-page > label {
+  color: black;
+  display: block;
+}
+
+.login-input {
+  display: block;
+  background: transparent;
+  border: 1px #aaaaaa solid;
+  padding: 0 5px;
+  box-sizing: border-box;
+  width: 85px;
+}

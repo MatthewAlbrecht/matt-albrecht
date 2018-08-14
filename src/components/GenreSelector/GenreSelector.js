@@ -17,7 +17,7 @@ class GenreSelector extends Component {
 
   render() {
     return <div className="genre-selector">
-      <label htmlFor="search-genre" className="input-label">Genres</label>
+      <label htmlFor="search-genre" className="label">Genres</label>
       {/* <Search Consumer={this.props.Consumer} target="genre"></Search> */}
       <div className="genres">
         {this.renderGenres()}

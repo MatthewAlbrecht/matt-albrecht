@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from './components/Home'
 import AlbumAddEdit from './components/AlbumAddEdit'
 import Albums from './components/Albums'
+import Login from './components/Login'
 
 
 // Import context store
@@ -26,6 +27,11 @@ class App extends PureComponent {
     super();
     this.state = store
   }
+
+  componentDidMount() {
+    actions.gatherStateFromLocalStorage()
+  }
+  
 
   render() {
     for(let f in actions) {
@@ -45,6 +51,7 @@ class App extends PureComponent {
             <Route exact path="/" render={() => <Home Consumer={Consumer} />} />
             <Route exact path="/albums" render={() => <Albums Consumer={Consumer} />} />
             <Route path="/albums/new" render={() => <AlbumAddEdit Consumer={Consumer} />} />
+            <Route path="/albums/login" render={() => <Login Consumer={Consumer} />} />
           </Fragment>
         </Router>
       </Provider>

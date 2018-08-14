@@ -1,14 +1,114 @@
 import React, { Component } from 'react';
 
+import Input from '../Input'
+
 import './AlbumForm.css'
 class AlbumForm extends Component {
   render() {
-    return <form className="album-form" onSubmit={(e) => this.props.handleSubmit(e)}>
-    <div className="input-wrap">
+    return <form className="album-form" onSubmit={(e) => this.props.actions.postAlbum(e)}>
+    <Input
+      target="albumName"
+      label="Album Name"
+      type="text"
+      value={this.props.state.albumValues.albumName}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="artistName"
+      label="Artist Name"
+      type="text"
+      value={this.props.state.albumValues.artistName}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="albumTotalTracks"
+      label="Total Tracks"
+      type="text"
+      value={this.props.state.albumValues.albumTotalTracks}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="albumLengthInMinutes"
+      label="Album Length"
+      type="text"
+      value={this.props.state.albumValues.albumLengthInMinutes}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="albumYear"
+      label="Album Year"
+      type="text"
+      value={this.props.state.albumValues.albumYear}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="recomendedBy"
+      label="RecomendedBy"
+      type="text"
+      value={this.props.state.albumValues.recomendedBy}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="shortestTrackInSeconds"
+      label="Shortest Track"
+      type="text"
+      value={this.props.state.albumValues.shortestTrackInSeconds}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="longestTrackInSeconds"
+      label="Longest Track"
+      type="text"
+      value={this.props.state.albumValues.longestTrackInSeconds}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="rating"
+      label="Rating"
+      type="text"
+      value={this.props.state.albumValues.rating}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="orderNumber"
+      label="Order Number"
+      type="text"
+      value={this.props.state.albumValues.orderNumber}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="hasTitleTrack"
+      label="Title Track"
+      type="text"
+      value={this.props.state.albumValues.hasTitleTrack}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="genres"
+      label="Genres"
+      type="text"
+      value={this.props.state.albumValues.genres}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="spotifyURI"
+      label="Spotify URI"
+      type="text"
+      value={this.props.state.albumValues.spotifyURI}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    <Input
+      target="listenDate"
+      label="Listen Date"
+      type="date"
+      value={this.props.state.albumValues.listenDate}
+      handleChange={this.props.actions.updateAlbumProperty}
+    ></Input>
+    {/* <div className="input-wrap">
       <label htmlFor="albumName" className="input-label">Album Name</label>
       <input id="albumName" className="album-input" name="albumName" type="text" value={this.props.albumName} onChange={(e) => this.props.handleChange(e)} />
-    </div>
-    <div className="input-wrap">
+    </div> */}
+    {/* <div className="input-wrap">
       <label htmlFor="artistName" className="input-label">Artist Name</label>
       <input id="artistName" className="album-input" name="artistName" type="text" value={this.props.artistName} onChange={(e) => this.props.handleChange(e)} />
     </div>
@@ -59,7 +159,7 @@ class AlbumForm extends Component {
     <div className="input-wrap">
       <label htmlFor="listenDate" className="input-label">Date</label>
       <input id="listenDate" className="album-input" name="listenDate" type="date" value={this.props.listenDate} onChange={(e) => this.props.handleChange(e)} />
-    </div>
+    </div> */}
     <button className="primary-button" type="submit">Submit Album</button>
   </form>;
   }

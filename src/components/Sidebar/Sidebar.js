@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import Filters from "../Filters";
 import Stats from "../Stats";
@@ -26,7 +26,7 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <div className="sidebar">
+      <Fragment>
         <div className="sidebar-section search">
           <div className="sidebar-content">
             <Search Consumer={this.props.Consumer} target="search"></Search>
@@ -50,7 +50,7 @@ class Sidebar extends Component {
             <Stats Consumer={this.props.Consumer}></Stats>
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

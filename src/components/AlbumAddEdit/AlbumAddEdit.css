@@ -5,12 +5,10 @@
   
   display: flex;
   justify-content: center;
-  /* margin: 0 auto; */
   min-height: 100vh;
   padding: 36px;
   box-sizing: border-box;
   transition: all .2s ease-in-out;
-  /* width: 80%; */
 }
 
 .album-id-form {
@@ -80,4 +78,35 @@
 .sticky-button.top-left {
   top: 24px;
   left: 24px;
+}
+
+.sidebar-header-alt {
+  align-items: center;
+  background: rgb(243, 154, 53);
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  font-family: "Quicksand";
+  font-size: 14px;
+  height: 65px;
+  justify-content: space-between;
+  letter-spacing: 2px;
+  margin: 0 0 15px;
+  padding: 0 30px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.sidebar-header-alt > .close {
+  display: inline-block;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background: url('../../assets/icons/times-circle.svg') center center no-repeat;
+  background-size: 100%;
+  transition: transform .2s ease-in;
+}
+
+.sidebar-header-alt > .close:hover {
+  transform: scale(1.1);
 }

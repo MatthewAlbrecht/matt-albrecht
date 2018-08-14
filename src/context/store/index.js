@@ -5,6 +5,8 @@ export default {
   limit: 25,
   sort: "-orderNumber",
   light: "true",
+  album: null,
+  albumValues: null,
   albums: [],
   stats: {},
   primarySortOrder: "desc",
@@ -29,4 +31,13 @@ export default {
   greaterThanAlbumTotalTracks: "",
   lessThanListenDate: "",
   greaterThanListenDate: "",
+  username: "",
+  password: "",
+  local_access_token: "",
+  spotify_access_token: "",
+  isAuthenticated: null,
+  attemptingLogin: false,
+  loginStep: 0,
+  sidebarComponent: "Sidebar",
+  spotifyURI: ""
 }

@@ -31,7 +31,7 @@
 }
 
 .album-divider {
-  background: rgb(243, 154, 53);
+  background: rgb(34, 35, 38);
   box-sizing: border-box;
   border: #fff 6px solid;
   height: 80px;
@@ -79,7 +79,7 @@
 .album-rating {
   align-items: center;
   box-sizing: border-box;
-  border: 6px solid rgb(0, 0, 0);
+  border: 6px solid rgb(24, 24, 24);
   display: flex;
   height: 80px;
   justify-content: center;
