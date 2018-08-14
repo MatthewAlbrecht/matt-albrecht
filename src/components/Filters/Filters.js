@@ -78,8 +78,8 @@ class Filters extends Component {
           <div className="filter-item">
             <RangeInput
               min={0}
-              max={780}
-              defaultValue={[0, 780]}
+              max={2045}
+              defaultValue={[0, 2045]}
               label="Longest Track"
               Consumer={this.props.Consumer}
               target="LongestTrackInSeconds"

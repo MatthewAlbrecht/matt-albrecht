@@ -29,7 +29,6 @@ class AlbumAddEdit extends Component {
   
   renderAlbum() {
     let { spotifyURI, album, albumValues } = this.props.state
-    console.log('\n---> albumValues <---\n', albumValues, '\n');
     if (albumValues) {
       return (<AlbumForm Consumer={this.props.Consumer}></AlbumForm>)
     }
