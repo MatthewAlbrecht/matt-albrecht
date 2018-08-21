@@ -49,11 +49,11 @@ class AlbumsList extends Component {
         if (i === totalAlbums - 1) {
           return (
             <VisibilitySensor key={i} onChange={(visible) => this.handleVisibilityChange(visible)}>
-              <Album data={album} index={i}></Album>
+              <Album Consumer={this.props.Consumer} data={album} index={i}></Album>
             </VisibilitySensor>
           )
         }
-        return <Album key={i} data={album} index={i}></Album>
+        return <Album Consumer={this.props.Consumer} key={i} data={album} index={i}></Album>
       })
     } else {
       return null

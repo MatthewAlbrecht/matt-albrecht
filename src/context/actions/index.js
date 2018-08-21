@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { getDurationStringFromTotalSeconds } from '../../utils/utils'
 
 export default {
-  getAlbums: function(value) {
+  getAlbums: function() {
     this.setState({ albumsLoading: true, page: 1 }, () => {
       fetch(process.env.REACT_APP_API_URL + "albums" + getQsFromState(this.state), {
         method: "get"
@@ -23,6 +23,25 @@ export default {
           stats: json.stats
         });
       });
+    });
+  },
+  getAlbum: function() {
+    fetch(process.env.REACT_APP_API_URL + "albums/" + this.state.selectedAlbum, {
+      method: "get"
+    })
+    .then(res => res.json())
+    .then(json => {
+      // console.log("\n---> json <---\n", json, "\n");
+      if (json.error) {
+        toast("Error Fetching Album", { type: "error", autoClose: 3000 });
+        return;
+      }
+      json.longestTrackInSeconds = formatSecondsToMinutes(json.longestTrackInSeconds)
+      json.shortestTrackInSeconds = formatSecondsToMinutes(json.shortestTrackInSeconds)
+      json.genres = json.genres.join(" ")
+      json.listenDate = new Date(json.listenDate).toDateInputValue()
+      console.log('\n---> json <---\n', json, '\n');
+      this.setState({albumValues: json})
     });
   },
   getNextPage: function() {
@@ -93,6 +112,35 @@ export default {
       console.log('\n---> err <---\n', err, '\n');
     })
   },
+  putAlbum: function(e) {
+    e.preventDefault()
+    console.log('\n---> this.state.albumValues <---\n', this.state.albumValues, '\n');
+    fetch(process.env.REACT_APP_API_URL + "albums/" + this.state.albumValues._id, {
+      method: "put",
+      body: JSON.stringify({...this.state.albumValues, spotifyAlbumData: this.state.album}),
+      headers: {
+        'x-access-token': this.state.local_access_token,
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(json => {
+      console.log('\n---> json <---\n', json, '\n');
+      if (json.error) {
+        if (json.error.code === 11000) {
+          toast("Album Duplicated", { type: "error", autoClose: 3000 })
+        } else {
+          toast("Error Saving Album", { type: "error", autoClose: 3000 })
+        }
+      } else {
+        toast("Album Updated", { type: "success", autoClose: 3000 })
+        this.setState({sidebarComponent: "Sidebar", album: null, albumValues: null, spotifyURI: ""})
+      }
+    })
+    .catch(err => {
+      console.log('\n---> err <---\n', err, '\n');
+    })
+  },
   login: function() {
     // if (this.state.attemptingLogin) return;
     this.setState({attemptingLogin: true})
@@ -108,6 +156,7 @@ export default {
       this.setState({isAuthenticated: json.auth, access_token: json.token, attemptingLogin: false, username: "", password: "", loginStep: !json.auth ? 0 : this.state.loginStep})
       if (json.token) {
         localStorage.setItem("local_access_token", json.token)
+        this.setState({local_access_token: json.token})
       }
       if (!json.auth) {
         toast(json.message, { type: "error", autoClose: 3000 });          
@@ -175,7 +224,7 @@ export default {
     
     let result = fashionAlbumData(json, this.state)
     console.log('\n---> result <---\n', result, '\n');
-
+    
     this.setState({ album: json, albumValues: result})
   })
   .catch(err => {
@@ -276,11 +325,12 @@ Date.prototype.addDays = function(days) {
 }
 
 // eslint-disable-next-line
-Date.prototype.toDateInputValue = (function() { 
+Date.prototype.toDateInputValue = (function() {
   var local = new Date(this);
-  local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
   return local.toJSON().slice(0,10);
 });
+
+let formatSecondsToMinutes = (seconds) => Math.floor(seconds / 60) + ":" + ("0" + String(seconds - Math.floor(seconds / 60) * 60)).slice(-2) 
 
 function fashionAlbumData(album, state) {
   let result = {

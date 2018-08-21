@@ -45,7 +45,7 @@ class NavBar extends Component {
         </div>
       </div> */}
       <AuthAwareComponent state={this.props.state}>
-        <div className="add" onClick={() => this.props.actions.updateProperty('sidebarComponent', 'addEditAlbum')}>
+        <div className="add" onClick={() => this.props.actions.updateProperty('sidebarComponent', 'addAlbum')}>
           <span className="add-icon"></span>
         </div>
       </AuthAwareComponent>

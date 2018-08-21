@@ -15,6 +15,16 @@
   width: 300px;
 }
 
+.form-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-footer > .primary-button {
+  width: 180px;
+}
+
 .primary-button {
   background: linear-gradient(-135deg, rgb(243, 154, 53), rgb(245, 176, 92)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border: none;
@@ -31,6 +41,22 @@
   text-decoration: none;
   text-transform: uppercase;
   width: 200px;
+}
+
+.trash-button {
+  background: url('../../assets/icons/trash-alt.svg') center center no-repeat;
+  background-size: 50%;
+  cursor: pointer;
+  height: 40px;
+  border: none;
+  text-decoration: none;
+  width: 40px;
+
+  transition: transform .2s ease-in;
+}
+
+.trash-button:hover {
+  transform: scale(.90)
 }
 
 .fullscreen-input {

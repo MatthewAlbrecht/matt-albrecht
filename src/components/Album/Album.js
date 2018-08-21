@@ -12,6 +12,7 @@ class Album extends Component {
     }
 
     this.styleRatingBox = this.styleRatingBox.bind(this);
+    this.handleAlbumClick = this.handleAlbumClick.bind(this);
     this.myInterval = null
     this.myTimeout1 = null
     this.myTimeout2 = null
@@ -42,6 +43,12 @@ class Album extends Component {
     clearTimeout(this.myTimeout2)
     clearTimeout(this.myTimeout3)
     clearTimeout(this.myTimeout4)
+  }
+
+  handleAlbumClick(_id) {
+    console.log('\n---> _id <---\n', _id, '\n');
+    this.props.actions.updateProperty('selectedAlbum', _id)
+    this.props.actions.updateProperty('sidebarComponent', 'editAlbum')
   }
   
 
@@ -76,7 +83,7 @@ class Album extends Component {
 
   render() {
     let { data } = this.props
-    return <div className="album">
+    return <div className="album" onClick={() => this.handleAlbumClick(data._id)}>
       <div className="album-img" style={this.styleAlbumImg()}>
       </div>
       <div className="album-divider">

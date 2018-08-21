@@ -10,8 +10,10 @@ class SidebarWrap extends Component {
     let {sidebarComponent} = this.props.state
     if (sidebarComponent === "Sidebar") {
       componentToRender = <Sidebar Consumer={this.props.Consumer}></Sidebar>
-    } else if (sidebarComponent === "addEditAlbum") {
+    } else if (sidebarComponent === "addAlbum") {
       componentToRender = <AlbumAddEdit Consumer={this.props.Consumer}></AlbumAddEdit>
+    } else if (sidebarComponent === "editAlbum") {
+      componentToRender = <AlbumAddEdit Consumer={this.props.Consumer} isEditing={true}></AlbumAddEdit>
     }
 
     return <div className="sidebar">
