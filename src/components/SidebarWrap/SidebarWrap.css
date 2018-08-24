@@ -1,0 +1,21 @@
+.sidebar {
+  background: rgb(239, 239, 239);
+  background: linear-gradient(135deg, rgb(34, 35, 38), rgb(24, 24, 24));
+  display: inline-block;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 300px;
+  transition: transform .2s linear;
+  transform: translateX(-100%);
+}
+
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+@media screen and (min-width: 800px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+}

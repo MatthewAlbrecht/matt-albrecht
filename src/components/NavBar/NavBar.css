@@ -9,7 +9,13 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: calc(100% - 300px);
+  width: 100%;
+  transition: width .2s linear, transform .2s linear;
+}
+
+.nav.sidebar-open {
+  width: 100%;
+  transform: translateX(300px);
 }
 
 .total, .list-options, .login {
@@ -86,20 +92,43 @@
 }
 
 .add {
-  cursor: pointer;
-  height: 20px;
+  /* height: 20px; */
+  display: flex;
+  align-items: center;
 }
 
 
 .add-icon {
+  cursor: pointer;
   background: url('../../assets/icons/plus-square.svg') center center no-repeat;
   background-size: 100%;
   display: inline-block;
-  height: 20px;
-  width: 20px;
-  transition: transform .2s ease-in;
+  height: 30px;
+  width: 30px;
 }
 
-.add:hover .add-icon {
-  transform: scale(1.1);
+.sidebar-mobile-button {
+  cursor: pointer;
+  z-index: 3;
+  height: 30px;
+  margin: 0 0 0 15px;
+  width: 30px;
+  background: url('../../assets/icons/bars.svg') center center no-repeat;
+  background-size: 100%;
+  display: inline-block;
+}
+
+
+@media screen and (min-width: 800px) {
+  .nav {
+    width: calc(100% - 300px);
+    transform: translateX(0);
+  }
+  .nav.sidebar-open {
+    width: calc(100% - 300px);
+    transform: translateX(0);
+  }
+  .sidebar-mobile-button {
+    display: none;
+  }
 }

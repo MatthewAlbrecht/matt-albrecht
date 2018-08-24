@@ -9,6 +9,7 @@ class Album extends Component {
       ratingBoxStyle: null,
       ratingStyle: null,
       showRating: false,
+      backgroundImageUrl: "",
     }
 
     this.styleRatingBox = this.styleRatingBox.bind(this);
@@ -35,6 +36,19 @@ class Album extends Component {
     this.myTimeout4 = setTimeout(() => {  
       this.styleRating()
     }, baseNumber + 1000);
+
+    if (this.props.data && this.props.data.spotifyAlbumData) {
+      let { images } = this.props.data.spotifyAlbumData
+      let image = images
+        .filter(image => image.width > 80)
+        .reduce((smallest, image) => {
+          if (!smallest) return image;
+          return image.width < smallest.width ? image : smallest
+        }, null)
+      if (image) {
+        this.setState({backgroundImageUrl: image.url})
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -50,7 +64,6 @@ class Album extends Component {
     this.props.actions.updateProperty('selectedAlbum', _id)
     this.props.actions.updateProperty('sidebarComponent', 'editAlbum')
   }
-  
 
   styleAlbumImg() {
     if (this.props.data && this.props.data.spotifyAlbumData) {
@@ -67,13 +80,13 @@ class Album extends Component {
     }
     return {}
   }
-  
+
   styleRatingBox() {
     let { data } = this.props
     if (!this.state.ratingBoxStyle) {
       this.setState({ratingBoxStyle: {transform: `scale(${data.rating/10})`, background: json[Math.round(((data.rating / 10) * 20) - 1)]}}) 
     } else {
-      this.setState({ratingBoxStyle: {...this.state.ratingBoxStyle, opacity: "0.35"}})
+      this.setState({ratingBoxStyle: {transform: `scale(${data.rating/10})`, background: json[Math.round(((data.rating / 10) * 20) - 1)], opacity: "0.35"}})
     }
   }
 
@@ -86,6 +99,7 @@ class Album extends Component {
     return <div className="album" onClick={() => this.handleAlbumClick(data._id)}>
       <div className="album-img" style={this.styleAlbumImg()}>
       </div>
+      <img className="album-img-grid" src={this.state.backgroundImageUrl}></img>
       <div className="album-divider">
 
       </div>

@@ -5,5 +5,24 @@
   height: calc(100vh - 65px);
   overflow-y: scroll;
   padding: 0 30px 30px;
-  width: calc(100% - 300px);
+  position: absolute;
+  right: 0;
+  top: 65px;
+  width: 100%;
+  transition: width .2s linear, transform .2s linear;
+}
+
+.albums.sidebar-open {
+  width: 100%;
+  transform: translateX(300px);
+}
+
+@media screen and (min-width: 800px) {
+  .albums {
+    width: calc(100% - 300px);
+  }
+  .albums.sidebar-open {
+    width: calc(100% - 300px);
+    transform: translateX(0)
+  }
 }

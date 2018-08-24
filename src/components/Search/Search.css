@@ -1,3 +1,8 @@
+.search {
+  display: inline-block;
+  width: 100%;
+}
+
 .search-input {
   background: rgb(255,255,255,0.1) url('../../assets/icons/search.svg') 15px center no-repeat;
   border: none;

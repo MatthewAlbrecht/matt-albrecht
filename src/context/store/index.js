@@ -34,6 +34,7 @@ export default {
   secondarySortOrder: "asc",
   selectedAlbum: "",
   sidebarComponent: "Sidebar",
+  sidebarClosed: true,
   sort: "-orderNumber",
   spotify_access_token: "",
   spotifyURI: "",

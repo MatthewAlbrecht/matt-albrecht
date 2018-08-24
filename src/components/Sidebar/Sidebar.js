@@ -30,6 +30,7 @@ class Sidebar extends Component {
         <div className="sidebar-section search">
           <div className="sidebar-content">
             <Search Consumer={this.props.Consumer} target="search"></Search>
+            <span className="close" onClick={e => this.props.actions.updateProperty("sidebarClosed", !this.props.state.sidebarClosed)}></span>
           </div>
         </div>
         <div className="sidebar-section">

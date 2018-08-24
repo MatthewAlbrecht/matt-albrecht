@@ -29,9 +29,14 @@ class NavBar extends Component {
     }
     return result.join(" ")
   }
+  
+  cnNav() {
+    let { sidebarClosed } = this.props.state
+    return sidebarClosed ? "nav" : "nav sidebar-open"
+  }
 
   render() {
-    return <nav className="nav">
+    return <nav className={this.cnNav()}>
       <div className="total">
         <span className="total-label">Total Albums</span>
         <span className="total-value">{this.props.state.total}</span>
@@ -44,11 +49,13 @@ class NavBar extends Component {
           </div>
         </div>
       </div> */}
-      <AuthAwareComponent state={this.props.state}>
-        <div className="add" onClick={() => this.props.actions.updateProperty('sidebarComponent', 'addAlbum')}>
-          <span className="add-icon"></span>
-        </div>
-      </AuthAwareComponent>
+      <div className="add">
+        <AuthAwareComponent state={this.props.state}>
+          <a className="add-icon" onClick={() => this.props.actions.updateProperty('sidebarComponent', 'addAlbum')}></a>
+        </AuthAwareComponent>
+        <a className="sidebar-mobile-button" onClick={() => this.props.actions.updateProperty("sidebarClosed", !this.props.state.sidebarClosed)}></a>
+      </div>
+      
     </nav>;
   }
 }

@@ -1,12 +1,13 @@
 .album {
   background: #fff;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   cursor: pointer;
-  display: flex;
-  height: 80px;
-  width: 100%;
-
+  min-width: 275px;
+  max-width: 312px;
+  margin: 0 auto;
   transition: box-shadow 0.2s ease-in;
+  padding: 6px 6px 0 6px;
 }
 
 .album:hover {
@@ -24,27 +25,33 @@
   background-repeat: no-repeat;
   background-size: 68px;
   box-sizing: border-box;
-  display: inline-block;
   height: 80px;
   padding: 6px;
   width: 80px;
+  display: none;
+}
+
+.album-img-grid {
+  display: block;
+  width: 100%;
 }
 
 .album-divider {
   background: rgb(34, 35, 38);
   box-sizing: border-box;
-  border: #fff 6px solid;
-  height: 80px;
-  width: 18px;
+  border-top: #fff 6px solid;
+  border-bottom: #fff 6px solid;
+  height: 18px;
+  width: 100%;
 }
 
 .album-details {
   align-items: center;
   box-sizing: border-box;
   display: flex;
-  height: 80px;
+  /* height: 80px; */
   justify-content: flex-start;
-  padding: 6px;
+  padding: 6px 6px 12px 6px;
   flex: 1;
 }
 
@@ -70,23 +77,24 @@
   font-family: "Avenir";
   text-orientation: sideways;
   font-size: 16px;
-  letter-spacing: 6px;
+  letter-spacing: 1px;
   writing-mode: vertical-rl;
   text-transform: uppercase;
   transform: rotateZ(180deg);
+  align-self: center;
 }
 
 .album-rating {
   align-items: center;
   box-sizing: border-box;
-  border: 6px solid rgb(24, 24, 24);
+  border-top: 6px solid rgb(24, 24, 24);
   display: flex;
   height: 80px;
   justify-content: center;
   /* padding: 6px; */
   overflow: hidden;
   position: relative;
-  width: 80px;
+  width: 100%;
   z-index: 2;
 }
 
@@ -117,4 +125,47 @@
   opacity: 0;
   transform: translateY(-30%);
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+
+@media screen and (min-width: 530px) {
+  .album {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    padding: 0;
+    min-width: inherit;
+    max-width: inherit;
+    margin: 0;
+  }
+
+  .album-img {
+    display: inline-block;
+  }
+
+  .album-img-grid {
+    display: none;
+  }
+
+
+  .album-divider {
+    border: #fff 6px solid;
+    height: 80px;
+    width: 18px;
+  }
+
+  .album-details {
+    height: 80px;
+    padding: 6px;
+    flex: 1;
+  }
+
+  .album-year {
+    letter-spacing: 6px;
+
+  }
+
+  .album-rating {
+    width: 80px;
+  }
 }

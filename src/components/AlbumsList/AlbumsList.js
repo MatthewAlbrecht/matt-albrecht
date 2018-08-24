@@ -32,14 +32,19 @@ class AlbumsList extends Component {
     }
   }
   
+   componentDidMount() {
+     this.props.actions.getAlbums()
+   }
+  
   handleVisibilityChange(visible) {
     if (visible) {
       this.props.actions.getNextPage()
     }
   }
- 
-  componentDidMount() {
-    this.props.actions.getAlbums()
+
+  cnAlbums() {
+    let { sidebarClosed } = this.props.state
+    return sidebarClosed ? "albums" : "albums sidebar-open"
   }
 
   renderAlbums() {
@@ -61,7 +66,7 @@ class AlbumsList extends Component {
   }
 
   render() {
-    return <div className="albums">
+    return <div className={this.cnAlbums()}>
       {this.renderAlbums()}
     </div>;
 

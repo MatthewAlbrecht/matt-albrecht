@@ -1,18 +1,9 @@
-.sidebar {
-  background: rgb(239, 239, 239);
-  background: linear-gradient(135deg, rgb(34, 35, 38), rgb(24, 24, 24));
-  display: inline-block;
-  overflow-y: scroll;
-  height: 100vh;
-  width: 300px;
-}
-
 .sidebar-section + .sidebar-section {
   margin-top: 2px;
 }
 
 .sidebar-section.search {
-  padding: 15px;
+  padding: 15px 30px 15px 15px;
 }
 
 .sidebar-header {
@@ -45,6 +36,29 @@
   background: rgb(245, 176, 92)
 }
 
+.sidebar-section.search {
+  box-sizing: border-box;
+}
+
+.sidebar-section.search .sidebar-content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-section.search .sidebar-content .search{
+  margin-right: 15px;
+}
+
+.sidebar-section.search .close {
+  display: inline-block;
+  cursor: pointer;
+  min-height: 20px;
+  min-width: 20px;
+  background: url('../../assets/icons/times-circle.svg') center center no-repeat;
+  background-size: 100%;
+  transition: transform .2s ease-in;
+}
 
 .arrow {
   background: url(../../assets/icons/whiteArrowNoCircle.svg) center center no-repeat;
@@ -79,4 +93,18 @@
 
 .sidebar-content.stat {
   max-height: 1000px;
+}
+
+@media screen and (min-width: 800px) {
+  .sidebar-section.search .close {
+    display: none;
+  }
+
+  .sidebar-section.search {
+    padding: 15px;
+  }
+
+  .sidebar-section.search .sidebar-content .search{
+    margin-right: 0;
+  }
 }
