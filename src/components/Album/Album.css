@@ -166,6 +166,7 @@
   }
 
   .album-rating {
+    border: 6px solid rgb(24, 24, 24);
     width: 80px;
   }
 }
