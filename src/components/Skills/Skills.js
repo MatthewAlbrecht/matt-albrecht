@@ -15,7 +15,7 @@ class Skills extends Component {
             <li className="skills-list-item">React Native</li>
             <li className="skills-list-item">Angular</li>
             <li className="skills-list-item">Javascript</li>
-            <li className="skills-list-item">JQuery</li>
+            <li className="skills-list-item">Swift</li>
             <li className="skills-list-item">HTML // CSS</li>
           </ul>
         </div>
