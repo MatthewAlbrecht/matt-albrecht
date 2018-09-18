@@ -93,7 +93,7 @@ class Filters extends Component {
             <RangeInput
               min={0}
               max={100}
-              defaultValue={[0, 100]}
+              defaultValue={[0, 365]}
               label="Listen Date"
               Consumer={this.props.Consumer}
               target="ListenDate"
