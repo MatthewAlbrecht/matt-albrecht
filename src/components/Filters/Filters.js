@@ -24,8 +24,8 @@ class Filters extends Component {
           <div className="filter-item">
             <RangeInput
               min={1960}
-              max={2018}
-              defaultValue={[1960, 2018]}
+              max={2019}
+              defaultValue={[1960, 2019]}
               label="Album Year"
               Consumer={this.props.Consumer}
               target="AlbumYear"
@@ -92,7 +92,7 @@ class Filters extends Component {
           <div className="filter-item">
             <RangeInput
               min={0}
-              max={100}
+              max={365}
               defaultValue={[0, 365]}
               label="Listen Date"
               Consumer={this.props.Consumer}
